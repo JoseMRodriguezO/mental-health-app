@@ -26,6 +26,7 @@ export function Content() {
     console.log("handleCreateJournalEntry", params);
     axios.post("http://localhost:3000/journal_entries.json", params).then((response) => {
       setJournalEntries([...journalEntries, response.data]);
+      successCallback();
     });
   };
   const handleShowJournalEntry = (journalEntry) => {
