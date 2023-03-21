@@ -6,6 +6,7 @@ import { Modal } from "./Modal";
 import { JournalEntriesShow } from "./JournalEntriesShow";
 import { MoodsNew } from "./MoodsNew";
 import { Signup } from "./Signup";
+import { Login } from "../Login";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -56,6 +57,7 @@ export function Content() {
       </Modal>
       <MoodsNew onCreateMood={handleCreateMood} />
       <Signup />
+      <Login />
     </div>
   );
 }
