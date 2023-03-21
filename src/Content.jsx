@@ -4,6 +4,7 @@ import { JournalEntriesIndex } from "./JournalEntriesIndex";
 import { JournalEntriesNew } from "./JournalEntriesNew";
 import { Modal } from "./Modal";
 import { JournalEntriesShow } from "./JournalEntriesShow";
+import { MoodsNew } from "./MoodsNew";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -44,6 +45,7 @@ export function Content() {
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
         <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
+      <MoodsNew />
     </div>
   );
 }
