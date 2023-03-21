@@ -53,29 +53,25 @@ export function Content() {
   useEffect(handleIndexJournalEntries, []);
 
   return (
-    <div>
-      <JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />
-      <JournalEntriesIndex journalEntries={journalEntries} onShowJournalEntry={handleShowJournalEntry} />
+    <div className="container">
+      <Routes>
+        <Route
+          path="/journal_entries/new"
+          element={<JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />}
+        />
+        <Route
+          path="/journal_entries"
+          element={<JournalEntriesIndex journalEntries={journalEntries} onShowJournalEntry={handleShowJournalEntry} />}
+        />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
         <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
       <MoodsNew onCreateMood={handleCreateMood} />
-      <Signup />
-      <Login />
       <LogoutLink />
     </div>
   );
 }
-// finish routes
-/* <div className="container">
-<Routes>
-  <Route path="/signup" element={<Signup />} />
-  <Route path="/login" element={<Login />} />
-  <Route path="/recipes/new" element={<RecipesNew onCreateRecipe={handleCreateRecipe} />} />
-  <Route path="/recipes" element={<RecipesIndex recipes={recipes} onShowRecipe={handleShowRecipe} />} />
-</Routes>
-
-<Modal show={isRecipesShowVisible} onClose={handleClose}>
-  <RecipesShow recipe={currentRecipe} onUpdateRecipe={handleUpdateRecipe} onDestroyRecipe={handleDestroyRecipe} />
-</Modal>
-</div> */
