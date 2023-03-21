@@ -36,6 +36,14 @@ export function Content() {
     setIsJournalEntriesShowvisible(false);
   };
 
+  const handleCreateMood = (params, successCallback) => {
+    console.log("handleCreateMood", params);
+    axios.post("http://localhost:3000/moods.json", params).then((response) => {
+      setMoods([...moods, response.data]);
+      successCallback();
+    });
+  };
+
   useEffect(handleIndexJournalEntries, []);
 
   return (
@@ -45,7 +53,7 @@ export function Content() {
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
         <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
-      <MoodsNew />
+      <MoodsNew onCreateMood={handleCreateMood} />
     </div>
   );
 }

@@ -1,8 +1,14 @@
-export function MoodsNew() {
+export function MoodsNew(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onCreateMood(params, () => event.target.reset());
+  };
+
   return (
     <div>
       <h1>Moods</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           UserID: <input user_id="user_id" type="text" />
         </div>
