@@ -7,6 +7,7 @@ import { JournalEntriesShow } from "./JournalEntriesShow";
 import { MoodsNew } from "./MoodsNew";
 import { Signup } from "./Signup";
 import { Login } from "../Login";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -58,6 +59,7 @@ export function Content() {
       <MoodsNew onCreateMood={handleCreateMood} />
       <Signup />
       <Login />
+      <LogoutLink />
     </div>
   );
 }
