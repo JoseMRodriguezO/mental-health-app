@@ -13,6 +13,7 @@ export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
   const [isJournalEntriesShowVisible, setIsJournalEntriesShowvisible] = useState(false);
   const [currentJournalEntry, setCurrentJournalEntry] = useState({});
+  const [moods, setMoods] = useState([]);
 
   const handleIndexJournalEntries = () => {
     console.log("handleIndexjournalEntries");

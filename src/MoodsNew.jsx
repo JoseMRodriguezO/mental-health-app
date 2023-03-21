@@ -10,13 +10,10 @@ export function MoodsNew(props) {
       <h1>Moods</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          UserID: <input user_id="user_id" type="text" />
+          Mood_type: <input name="mood_type" type="text" />
         </div>
         <div>
-          Mood_type: <input mood_type="mood_type" type="text" />
-        </div>
-        <div>
-          Mood_intensity: <input mood_intensity="mood_intensity" type="text" />
+          Mood_intensity: <input name="mood_intensity" type="text" />
         </div>
 
         <button type="submit">Create Mood</button>
