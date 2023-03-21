@@ -8,6 +8,7 @@ import { MoodsNew } from "./MoodsNew";
 import { Signup } from "./Signup";
 import { Login } from "../Login";
 import { LogoutLink } from "./LogoutLink";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -65,3 +66,16 @@ export function Content() {
     </div>
   );
 }
+// finish routes
+/* <div className="container">
+<Routes>
+  <Route path="/signup" element={<Signup />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/recipes/new" element={<RecipesNew onCreateRecipe={handleCreateRecipe} />} />
+  <Route path="/recipes" element={<RecipesIndex recipes={recipes} onShowRecipe={handleShowRecipe} />} />
+</Routes>
+
+<Modal show={isRecipesShowVisible} onClose={handleClose}>
+  <RecipesShow recipe={currentRecipe} onUpdateRecipe={handleUpdateRecipe} onDestroyRecipe={handleDestroyRecipe} />
+</Modal>
+</div> */
