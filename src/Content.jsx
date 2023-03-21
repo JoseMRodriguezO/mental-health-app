@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { JournalEntriesIndex } from "./JournalEntriesIndex";
 import { JournalEntriesNew } from "./JournalEntriesNew";
+import { Modal } from "./Modal";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -27,6 +28,9 @@ export function Content() {
     <div>
       <JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />
       <JournalEntriesIndex journalEntries={journalEntries} />
+      <Modal show={true}>
+        <h1>Test</h1>
+      </Modal>
     </div>
   );
 }
