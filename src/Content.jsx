@@ -25,7 +25,7 @@ export function Content() {
 
   return (
     <div>
-      <JournalEntriesNew />
+      <JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />
       <JournalEntriesIndex journalEntries={journalEntries} />
     </div>
   );

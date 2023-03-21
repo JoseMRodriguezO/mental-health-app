@@ -1,8 +1,14 @@
-export function JournalEntriesNew() {
+export function JournalEntriesNew(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.omCreateJournalEntry(params, () => event.target.target.reset());
+  };
+
   return (
     <div>
       <h1>New Journal Entry </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           UserID: <input user_id="user_id" type="text" />
         </div>
