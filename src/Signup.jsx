@@ -31,9 +31,6 @@ export function Signup() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
-        </div>
-        <div>
           Email: <input name="email" type="email" />
         </div>
         <div>
