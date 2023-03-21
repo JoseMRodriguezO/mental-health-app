@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import { JournalEntriesIndex } from "./JournalEntriesIndex";
 import { JournalEntriesNew } from "./JournalEntriesNew";
 import { Modal } from "./Modal";
+import { JournalEntriesShow } from "./JournalEntriesShow";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
+  const [isJournalEntriesShowVisible, setIsJournalEntriesShowvisible] = useState(false);
+  const [currentJournalEntry, setCurrentJournalEntry] = useState({});
 
   const handleIndexJournalEntries = () => {
     console.log("handleIndexjournalEntries");
@@ -21,15 +24,25 @@ export function Content() {
       setJournalEntries([...journalEntries, response.data]);
     });
   };
+  const handleShowJournalEntry = (journalEntry) => {
+    console.log("handleShowJournalEntry", journalEntry);
+    setIsJournalEntriesShowvisible(true);
+    setCurrentJournalEntry(journalEntry);
+  };
+
+  const handleClose = () => {
+    console.log("handleClose");
+    setIsJournalEntriesShowvisible(false);
+  };
 
   useEffect(handleIndexJournalEntries, []);
 
   return (
     <div>
       <JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />
-      <JournalEntriesIndex journalEntries={journalEntries} />
-      <Modal show={true}>
-        <h1>Test</h1>
+      <JournalEntriesIndex journalEntries={journalEntries} onShowJournalEntry={handleShowJournalEntry} />
+      <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
+        <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
     </div>
   );

@@ -8,7 +8,7 @@ export function JournalEntriesIndex(props) {
           <h1>{journalEntry.title}</h1>
           <p>{journalEntry.content}</p>
           <p>{journalEntry.user_id}</p>
-          <p>hello</p>
+          <button onClick={() => props.onShowJournalEntry(journalEntry)}>Full Story</button>
         </div>
       ))}
     </div>
