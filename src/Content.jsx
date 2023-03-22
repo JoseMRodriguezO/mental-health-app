@@ -9,12 +9,15 @@ import { Signup } from "./Signup";
 import { Login } from "../Login";
 import { LogoutLink } from "./LogoutLink";
 import { Routes, Route } from "react-router-dom";
+import { Calendar } from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
   const [isJournalEntriesShowVisible, setIsJournalEntriesShowvisible] = useState(false);
   const [currentJournalEntry, setCurrentJournalEntry] = useState({});
   const [moods, setMoods] = useState([]);
+  const [value, defaultview, onChange] = useState(new Date());
 
   const handleIndexJournalEntries = () => {
     console.log("handleIndexjournalEntries");
@@ -63,6 +66,7 @@ export function Content() {
           path="/journal_entries"
           element={<JournalEntriesIndex journalEntries={journalEntries} onShowJournalEntry={handleShowJournalEntry} />}
         />
+        <Route path="/Moods/new" element={<MoodsNew onCreateMood={handleCreateMood} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>
@@ -70,7 +74,8 @@ export function Content() {
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
         <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
-      <MoodsNew onCreateMood={handleCreateMood} />
+      <Calendar />
+
       <LogoutLink />
     </div>
   );
