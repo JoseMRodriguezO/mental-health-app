@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 export function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            MentalYourHealth
-          </a>
+          MentalYourHealth
           <button
             className="navbar-toggler"
             type="button"
@@ -20,14 +20,14 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" href="/journal_entries">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/journal_entries">
+                <Link className="nav-link" href="/journal_entries">
                   All Journals
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/journal_entries/new">
@@ -35,9 +35,23 @@ export function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/Moods/new">
+                <Link className="nav-link" href="/Moods/new">
                   New Mood
-                </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/signup">
+                  Signup
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <LogoutLink className="nav-link" />
               </li>
             </ul>
             <form className="d-flex" role="search">

@@ -7,7 +7,6 @@ import { JournalEntriesShow } from "./JournalEntriesShow";
 import { MoodsNew } from "./MoodsNew";
 import { Signup } from "./Signup";
 import { Login } from "../Login";
-import { LogoutLink } from "./LogoutLink";
 import { Routes, Route } from "react-router-dom";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -59,12 +58,12 @@ export function Content() {
     <div className="container">
       <Routes>
         <Route
-          path="/journal_entries/new"
-          element={<JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />}
-        />
-        <Route
           path="/journal_entries"
           element={<JournalEntriesIndex journalEntries={journalEntries} onShowJournalEntry={handleShowJournalEntry} />}
+        />
+        <Route
+          path="/journal_entries/new"
+          element={<JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />}
         />
         <Route path="/Moods/new" element={<MoodsNew onCreateMood={handleCreateMood} />} />
         <Route path="/signup" element={<Signup />} />
@@ -75,8 +74,6 @@ export function Content() {
         <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
       </Modal>
       <Calendar />
-
-      <LogoutLink />
     </div>
   );
 }
