@@ -52,6 +52,22 @@ export function Content() {
       successCallback();
     });
   };
+  const handleUpdateJournalEntry = (id, params, successCallback) => {
+    console.log("handleUpdateJournalEntry", params);
+    axios.path("http://localhost:3000/journal_entries/${id}.json", params).then((response) => {
+      setJournalEntries(
+        journalEntries.map((journalEntry) => {
+          if (journalEntry.id === response.data.id) {
+            return response.data;
+          } else {
+            return journalEntry;
+          }
+        })
+      );
+      successCallback();
+      handleClose();
+    });
+  };
 
   useEffect(handleIndexJournalEntries, []);
 
@@ -72,9 +88,12 @@ export function Content() {
       </Routes>
 
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
-        <JournalEntriesShow journalEntry={currentJournalEntry} />
+        <JournalEntriesShow journalEntry={currentJournalEntry} onUpdateJournalEntry={handleUpdateJournalEntry} />
       </Modal>
       <Calendar />
     </div>
   );
 }
+
+// need to add update function on my backend  to make edit button work
+//Moods show jsx  not finish
