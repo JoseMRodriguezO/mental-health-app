@@ -72,7 +72,7 @@ export function Content() {
       </Routes>
 
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
-        <JournalEntriesShow journalEntry={setCurrentJournalEntry} />
+        <JournalEntriesShow journalEntry={currentJournalEntry} />
       </Modal>
       <Calendar />
     </div>
