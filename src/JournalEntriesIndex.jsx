@@ -6,8 +6,6 @@ export function JournalEntriesIndex(props) {
       {props.journalEntries.map((journalEntry) => (
         <div key={journalEntry.id}>
           <h1>{journalEntry.title}</h1>
-          <p>{journalEntry.content}</p>
-          <p>{journalEntry.user_id}</p>
           <button onClick={() => props.onShowJournalEntry(journalEntry)}>Full Story</button>
         </div>
       ))}
