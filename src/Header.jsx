@@ -40,18 +40,22 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signup">
-                  Signup
-                </Link>
+                {localStorage.jwt === undefined ? (
+                  <Link className="nav-link" to="/signup">
+                    Signup
+                  </Link>
+                ) : null}{" "}
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
+                {localStorage.jwt === undefined ? (
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                ) : null}{" "}
               </li>
 
               <li className="nav-item">
-                <LogoutLink className="nav-link" />
+                {localStorage.jwt !== undefined ? <LogoutLink className="nav-link" /> : null}
               </li>
             </ul>
             <form className="d-flex" role="search">
