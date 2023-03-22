@@ -25,17 +25,17 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="/journal_entries">
+                <Link className="nav-link" to="/journal_entries">
                   All Journals
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/journal_entries/new">
+                <Link className="nav-link" to="/journal_entries/new">
                   New Journal
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href="/Moods/new">
+                <Link className="nav-link" to="/moods/new">
                   New Mood
                 </Link>
               </li>

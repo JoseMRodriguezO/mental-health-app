@@ -10,6 +10,7 @@ import { Login } from "../Login";
 import { Routes, Route } from "react-router-dom";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { Link } from "react-router-dom";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);

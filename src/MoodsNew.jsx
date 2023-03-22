@@ -7,7 +7,7 @@ export function MoodsNew(props) {
 
   return (
     <div>
-      <h1>Moods</h1>
+      <h1>Mood</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Mood_type: <input name="mood_type" type="text" />
