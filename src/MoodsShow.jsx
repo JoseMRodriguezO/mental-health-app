@@ -1,18 +1,18 @@
 export function MoodsShow(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onUpdateJournalEntry(props.journalEntry.id, params, () => event.target.reset());
+  };
   return (
     <div>
-      <h1>Mood</h1>
-      <p>Mood Type: {props.mood.type} </p>
-      <p>Mood Level:{props.mood.intensity} </p>
-      <form>
+      <p>{props.mood.type}</p>
+      <form onSubmit={handleSubmit}>
         <div>
-          Mood Type <input defaultValue={props.mood.type} name="type" type="text" />
-        </div>
-
-        <div>
-          Mood level <input defaultValue={props.mood.intensity} name="intensity" type="text" />
+          <input defaultValue={props.mood.type} name="content" className="form-control" type="text"></input>
         </div>
       </form>
     </div>
   );
 }
+// fix this with the new. cheat

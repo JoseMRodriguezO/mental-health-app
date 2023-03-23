@@ -39,6 +39,7 @@ export function Header() {
                   New Mood
                 </Link>
               </li>
+
               <li className="nav-item">
                 {localStorage.jwt === undefined ? (
                   <Link className="nav-link" to="/signup">
