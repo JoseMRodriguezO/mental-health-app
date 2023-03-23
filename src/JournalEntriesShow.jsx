@@ -1,7 +1,8 @@
 export function JournalEntriesShow(props) {
   const handleSubmit = (event) => {
+    event.preventDefault();
     const params = new FormData(event.target);
-    props.onUpdatePhoto(props.photo.id, params, () => event.target.reset());
+    props.onUpdateJournalEntry(props.journalEntry.id, params, () => event.target.reset());
   };
 
   return (

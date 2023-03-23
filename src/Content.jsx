@@ -54,7 +54,7 @@ export function Content() {
   };
   const handleUpdateJournalEntry = (id, params, successCallback) => {
     console.log("handleUpdateJournalEntry", params);
-    axios.path("http://localhost:3000/journal_entries/${id}.json", params).then((response) => {
+    axios.patch(`http://localhost:3000/journal_entries/${id}.json`, params).then((response) => {
       setJournalEntries(
         journalEntries.map((journalEntry) => {
           if (journalEntry.id === response.data.id) {
@@ -95,5 +95,4 @@ export function Content() {
   );
 }
 
-// need to add update function on my backend  to make edit button work
 //Moods show jsx  not finish
