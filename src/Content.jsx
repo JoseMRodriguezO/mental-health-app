@@ -101,7 +101,7 @@ export function Content() {
           element={<JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />}
         />
         <Route path="/Moods/new" element={<MoodsNew onCreateMood={handleCreateMood} />} />
-        <Route path="/Moods/Show" element={<MoodsShow onShowMood={handleShowMood} />} />
+        <Route path="/Moods/Show" element={<MoodsShow moods={currentMood} onShowMood={handleShowMood} />} />
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
