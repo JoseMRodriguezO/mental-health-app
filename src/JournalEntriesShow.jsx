@@ -5,6 +5,10 @@ export function JournalEntriesShow(props) {
     props.onUpdateJournalEntry(props.journalEntry.id, params, () => event.target.reset());
   };
 
+  const handleClick = () => {
+    props.onDestroyJournalEntry(props.journalEntry);
+  };
+
   return (
     <div>
       <p>{props.journalEntry.content}</p>
@@ -16,6 +20,7 @@ export function JournalEntriesShow(props) {
           Edit
         </button>
       </form>
+      <button onClick={handleClick}>Delete</button>
     </div>
   );
 }
