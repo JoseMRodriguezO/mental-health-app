@@ -8,9 +8,8 @@ import { MoodsNew } from "./MoodsNew";
 import { Signup } from "./Signup";
 import { Login } from "../Login";
 import { Routes, Route } from "react-router-dom";
-import { Calendar } from "react-calendar";
 import { MoodsIndex } from "./MoodsIndex";
-import { MoodChart } from "./Chart";
+import { Home } from "./Home";
 import "react-calendar/dist/Calendar.css";
 
 export function Content() {
@@ -104,6 +103,7 @@ export function Content() {
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
       </Routes>
 
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>
@@ -113,8 +113,6 @@ export function Content() {
           onDestroyJournalEntry={handleDestroyJournalEntry}
         />
       </Modal>
-      <Calendar />
-      <MoodChart />
     </div>
   );
 }

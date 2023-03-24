@@ -30,7 +30,7 @@ export function MoodChart() {
 
   return (
     <div className="App">
-      <h1>lol</h1>
+      <h1>MoodChart</h1>
       <div>
         <Line data={data} options={options}></Line>
       </div>
