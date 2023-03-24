@@ -10,7 +10,7 @@ import { Login } from "../Login";
 import { Routes, Route } from "react-router-dom";
 import { Calendar } from "react-calendar";
 import { MoodsShow } from "./MoodsShow";
-
+import { MoodChart } from "./Chart";
 import "react-calendar/dist/Calendar.css";
 
 export function Content() {
@@ -115,6 +115,7 @@ export function Content() {
         />
       </Modal>
       <Calendar />
+      <MoodChart />
     </div>
   );
 }
