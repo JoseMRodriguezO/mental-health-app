@@ -9,7 +9,7 @@ import { Signup } from "./Signup";
 import { Login } from "../Login";
 import { Routes, Route } from "react-router-dom";
 import { Calendar } from "react-calendar";
-import { MoodsShow } from "./MoodsShow";
+import { MoodsIndex } from "./MoodsIndex";
 import { MoodChart } from "./Chart";
 import "react-calendar/dist/Calendar.css";
 
@@ -18,7 +18,6 @@ export function Content() {
   const [isJournalEntriesShowVisible, setIsJournalEntriesShowvisible] = useState(false);
   const [currentJournalEntry, setCurrentJournalEntry] = useState({});
   const [moods, setMoods] = useState([]);
-  const [currentMood, setCurrentMood] = useState([]);
 
   const handleIndexJournalEntries = () => {
     console.log("handleIndexjournalEntries");
@@ -78,15 +77,15 @@ export function Content() {
       successCallback();
     });
   };
-
-  const handleShowMood = (id, params, successCallback) => {
-    console.log("handleShowMood", id, params);
-    axios.get(`http://localhost:3000/moods/${id}.json`).then((response) => {
-      const updatedMoods = currentMood.map((mood) => (mood.id === id ? response.data : mood));
-      setCurrentMood(updatedMoods);
-      successCallback();
+  const handleIndexMoods = () => {
+    console.log("handleIndexMoods");
+    axios.get(`http://localhost:3000/moods.json`).then((response) => {
+      console.log(response.data);
+      setMoods(response.data);
     });
   };
+
+  useEffect(handleIndexMoods, []);
   useEffect(handleIndexJournalEntries, []);
 
   return (
@@ -101,7 +100,7 @@ export function Content() {
           element={<JournalEntriesNew onCreateJournalEntry={handleCreateJournalEntry} />}
         />
         <Route path="/Moods/new" element={<MoodsNew onCreateMood={handleCreateMood} />} />
-        <Route path="/Moods/Show" element={<MoodsShow moods={currentMood} onShowMood={handleShowMood} />} />
+        <Route path="/Moods" element={<MoodsIndex moods={moods} onIndexMood={handleIndexMoods} />} />
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

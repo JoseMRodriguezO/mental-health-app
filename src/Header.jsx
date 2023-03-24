@@ -40,7 +40,7 @@ export function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/moods/show">
+                <Link className="nav-link" to="/moods">
                   Mood
                 </Link>
               </li>
