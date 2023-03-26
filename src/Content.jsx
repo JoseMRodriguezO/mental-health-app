@@ -64,7 +64,7 @@ export function Content() {
   const handleDestroyJournalEntry = (journalEntry) => {
     console.log("handleDestroyJournalEntry", journalEntry);
     axios.delete(`http://localhost:3000/journal_entries/${journalEntry.id}.json`).then((response) => {
-      setJournalEntries(journalEntries.filter((p) => p.id !== journalEntry.id));
+      setJournalEntries(journalEntries.filter((j) => j.id !== journalEntry.id));
       handleClose();
     });
   };
