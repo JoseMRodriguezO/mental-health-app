@@ -1,8 +1,22 @@
 import React from "react";
+import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export function Home() {
   const location = useLocation();
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/activities/")
+      .then((response) => {
+        console.log("python", response);
+        setActivities(response.data.activities);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="container">
       <header>
@@ -24,6 +38,17 @@ export function Home() {
           Signup Now!!
         </button>
       </main>
+      <div>
+        <h1>Activities</h1>
+        <ul>
+          {activities.map((activity) => (
+            <li key={activity.id}>
+              <h2>{activity.title}</h2>
+              <p>{activity.description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
