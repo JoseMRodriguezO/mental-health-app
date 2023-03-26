@@ -20,12 +20,10 @@ export function Home() {
           start sharing your emotions in a safe and supportive environment. Together, we can help each other heal and
           overcome life's challenges.s{" "}
         </p>
-        <button>Click me!</button>
+        <button type="submit" className="btn btn-primary">
+          Signup Now!!
+        </button>
       </main>
-
-      <footer>
-        <p>Copyright © 2023</p>
-      </footer>
     </div>
   );
 }

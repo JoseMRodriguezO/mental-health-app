@@ -26,7 +26,7 @@ export function TaskManager() {
           <Calendar onChange={handleDateChange} value={selectedDate} />
         </div>
         <div className="col-md-6">
-          <h2>Tasks for {selectedDate.toDateString()}</h2>
+          <h2>Plan for {selectedDate.toDateString()}</h2>
           <ul>
             {tasksForSelectedDate.map((task, index) => (
               <li key={index}>{task.description}</li>
