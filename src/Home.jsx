@@ -7,7 +7,7 @@ export function Home() {
   return (
     <div className="container">
       <header>
-        <h1>MentaYourHealth</h1>
+        <h1>TalkSafe</h1>
       </header>
       <main>
         <p>Here is some content for my home page.</p>
