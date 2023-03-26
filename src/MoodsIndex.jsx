@@ -1,8 +1,8 @@
+import { MoodChart } from "./Chart";
 export function MoodsIndex(props) {
   return (
     <div>
-      <h1>Moods</h1>
-
+      <MoodChart />;<h1>Mood Tracking</h1>
       <div className="row">
         {props.moods.map((mood) => (
           <div key={mood.id} className="col-sm-4">
@@ -10,6 +10,7 @@ export function MoodsIndex(props) {
               <div className="card-body">
                 <h5 className="card-title">{mood.mood_type}</h5>
                 <p className="card-text"> {mood.mood_intensity}</p>
+                <p className="card-text"> {mood.created_at}</p>
 
                 <a href="#"> </a>
               </div>
@@ -20,7 +21,6 @@ export function MoodsIndex(props) {
     </div>
   );
 }
-
 // {props.moods.map((mood) => (
 //   <div key={mood.id}>
 //     <p>Intensity:{mood.mood_intensity}</p>

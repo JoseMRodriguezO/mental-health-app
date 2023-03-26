@@ -1,7 +1,7 @@
 export function JournalEntriesIndex(props) {
   return (
     <div>
-      <h1>All Journal Entries</h1>
+      <h1>Mood Journaling</h1>
       <div className="row">
         {props.journalEntries.map((journalEntry) => (
           <div key={journalEntry.id} className="col-sm-4">
@@ -9,7 +9,9 @@ export function JournalEntriesIndex(props) {
               <div className="card-body">
                 <h5 className="card-title">{journalEntry.title}</h5>
                 <p className="card-text"> {journalEntry.content}</p>
-                <button onClick={() => props.onShowJournalEntry(journalEntry)}>Full Story </button>
+                <button className="btn btn-primary" onClick={() => props.onShowJournalEntry(journalEntry)}>
+                  Full Story{" "}
+                </button>
                 <a href="#"> </a>
               </div>
             </div>

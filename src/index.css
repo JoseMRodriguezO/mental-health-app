@@ -5,4 +5,11 @@ html {
 #root {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-image: url('./assets/website.png') ;
+
+}
+.navbar-brand {
+font-family: "Lucida";
+font-size:  2em !important;
+
+;
 }

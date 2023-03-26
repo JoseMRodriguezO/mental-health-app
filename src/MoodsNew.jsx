@@ -1,3 +1,4 @@
+import { TaskManager } from "./TaskManager";
 export function MoodsNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,8 +28,11 @@ export function MoodsNew(props) {
           </select>
         </div>
 
-        <button type="submit">Create Mood</button>
+        <button type="submit" className="btn btn-primary">
+          Create Mood
+        </button>
       </form>
+      <TaskManager />;
     </div>
   );
 }

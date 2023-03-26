@@ -36,14 +36,16 @@ export function Signup() {
         <div>
           Date of birth: <input name="date_of_birth" type="date_of_birth" />
         </div>
-        gender: <input name="gender" type="gender" />
+        Gender: <input name="gender" type="gender" />
         <div>
           Password: <input name="password" type="password" />
         </div>
         <div>
           Password confirmation: <input name="password_confirmation" type="password" />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className="btn btn-primary">
+          Signup
+        </button>
       </form>
     </div>
   );

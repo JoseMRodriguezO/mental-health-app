@@ -11,6 +11,7 @@ export function Header() {
           TalkSafe
           <button
             className="navbar-toggler"
+            n
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -29,7 +30,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/journal_entries">
-                  All Journals
+                  Mood Journaling
                 </Link>
               </li>
               <li className="nav-item">
@@ -44,7 +45,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/moods">
-                  Mood
+                  Mood Tracking
                 </Link>
               </li>
 

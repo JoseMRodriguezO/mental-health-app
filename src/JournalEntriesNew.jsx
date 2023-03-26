@@ -15,7 +15,9 @@ export function JournalEntriesNew(props) {
         <div>
           Content: <input name="content" type="text" />
         </div>
-        <button type="submit">Create Journal Entry</button>
+        <button type="submit" className="btn btn-primary">
+          Create Journal Entry
+        </button>
       </form>
     </div>
   );

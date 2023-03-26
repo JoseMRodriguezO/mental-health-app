@@ -14,18 +14,27 @@ ChartJS.register(LineElement, LineController, PointElement, CategoryScale, Linea
 
 export function MoodChart() {
   const data = {
-    labels: ["Mon", "Tues", "Wed"],
+    labels: ["Happy", "sad", "anxious", "angry"],
     datasets: [
       {
-        label: "34579",
-        data: [3, 4, 5, 7, 10, 17, 2, 10, 20],
+        label: "Mood type",
+        data: [3, 4, 5, 7, 80, 17, 2, 10, 1],
         backgroundColor: "blue",
         borderColor: "Black",
-        borderWidth: 1,
+        borderWidth: 2,
+      },
+    ],
+
+    datasets: [
+      {
+        label: "Moods overtime",
+        data: [2, 10, 25, 30, 1, 5, 6],
+        backgroundColor: "blue",
+        borderColor: "Black",
+        borderWidth: 3,
       },
     ],
   };
-
   const options = {};
 
   return (
