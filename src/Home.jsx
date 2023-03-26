@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 export function Home() {
   const location = useLocation();
   const [activities, setActivities] = useState([]);
+  const [quote, setQuote] = useState("");
 
   useEffect(() => {
     axios
@@ -15,6 +16,19 @@ export function Home() {
         setActivities(response.data.activities);
       })
       .catch((error) => console.error(error));
+  }, []);
+
+  const fetchQuote = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3000/positive_quotes`);
+      setQuote(response.data.quote);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchQuote();
   }, []);
 
   return (
@@ -34,12 +48,16 @@ export function Home() {
           start sharing your emotions in a safe and supportive environment. Together, we can help each other heal and
           overcome life's challenges.s{" "}
         </p>
+        <div>
+          <h2>Positive Quote of the Day:</h2>
+          <p>{quote}</p>
+        </div>
         <button type="submit" className="btn btn-primary">
           Signup Now!!
         </button>
       </main>
       <div>
-        <h1>Activities</h1>
+        <h1>Activities and Resources</h1>
         <ul>
           {activities.map((activity) => (
             <li key={activity.id}>
