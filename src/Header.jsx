@@ -6,9 +6,9 @@ export function Header() {
   const [searchFilter, setSearchFilter] = useState("");
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bg-primary">
-        <div className="container-fluid">
-          MentalYourHealth
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="navbar-brand">
+          TalkSafe
           <button
             className="navbar-toggler"
             type="button"
