@@ -1,4 +1,7 @@
 export function JournalEntriesShow(props) {
+  const ishandleClick = () => {
+    window.location.href = "https://www.betterhelp.com";
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
@@ -23,6 +26,11 @@ export function JournalEntriesShow(props) {
       <button className="btn btn-primary" onClick={handleClick}>
         Delete
       </button>
+      <div>
+        <button className="btn btn-primary" onClick={ishandleClick}>
+          Visit BetterHelp
+        </button>
+      </div>
     </div>
   );
 }

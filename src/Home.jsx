@@ -7,13 +7,23 @@ export function Home() {
   const location = useLocation();
   const [activities, setActivities] = useState([]);
   const [quote, setQuote] = useState("");
+  const [resources, setResources] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/activities/")
+      .get(`http://127.0.0.1:8000/activities/`)
       .then((response) => {
         console.log("python", response);
         setActivities(response.data.activities);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:8000/activities/resources/`)
+      .then((response) => {
+        console.log("python1", response);
+        setResources(response.data.resources);
       })
       .catch((error) => console.error(error));
   }, []);
@@ -49,23 +59,35 @@ export function Home() {
           overcome life's challenges.s{" "}
         </p>
         <div className="card">
-          <div className="card-body">
-            <div className="quote-container" style={{ background: "lightgrey", padding: "20px" }}>
+          <div className="card-body" style={{ background: "black" }}>
+            <div className="container" style={{ background: "lightgrey", padding: "20px" }}>
               <h2 className="mb-3 display-6">Positive Quote of the Day:</h2>{" "}
             </div>
-            <p className="quote-text" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+            <p
+              className="quote-text text-center"
+              style={{ fontSize: "1.5rem", fontWeight: "bold", color: "whitesmoke" }}
+            >
               {quote}
             </p>
           </div>
         </div>
       </main>
       <div>
-        <h1 className="text-center my-5 display-3">Activities and Resources</h1>
+        <h1 className="text-center my-5 display-3">Activities </h1>
         <ul className="list-group">
           {activities.map((activity) => (
             <li key={activity.id} className="list-group-item" style={{ background: "lightgrey", padding: "20px" }}>
               <h2>{activity.title}</h2>
               <p>{activity.description}</p>
+            </li>
+          ))}
+        </ul>
+        <h1 className="text-center my-5 display-3">Resources </h1>
+        <ul className="list-group">
+          {resources.map((resource) => (
+            <li key={resource.id} className="list-group-item" style={{ background: "lightgrey", padding: "20px" }}>
+              <h2>{resource.title}</h2>
+              <p>{resource.description}</p>
             </li>
           ))}
         </ul>
