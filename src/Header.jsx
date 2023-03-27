@@ -30,12 +30,12 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/journal_entries">
-                  Mood Journaling
+                  Posts
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/journal_entries/new">
-                  New Journal
+                  New Post
                 </Link>
               </li>
               <li className="nav-item">
@@ -45,7 +45,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/moods">
-                  Mood Tracking
+                  Feelings Tracking
                 </Link>
               </li>
 

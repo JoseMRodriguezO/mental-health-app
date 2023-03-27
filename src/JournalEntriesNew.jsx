@@ -7,7 +7,7 @@ export function JournalEntriesNew(props) {
 
   return (
     <div>
-      <h1>New Journal Entry </h1>
+      <h1>New Post Entry </h1>
       <form onSubmit={handleSubmit}>
         <div>
           Title: <input name="title" type="text" />
@@ -16,7 +16,7 @@ export function JournalEntriesNew(props) {
           Content: <input name="content" type="text" />
         </div>
         <button type="submit" className="btn btn-primary">
-          Create Journal Entry
+          Create Post Entry
         </button>
       </form>
     </div>

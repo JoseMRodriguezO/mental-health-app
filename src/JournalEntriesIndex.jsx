@@ -1,7 +1,7 @@
 export function JournalEntriesIndex(props) {
   return (
     <div>
-      <h1>Mood Journaling</h1>
+      <h1>Mood Posts</h1>
       <div className="row" style={{ background: "lightblue", fontWeight: "bolder", fontSize: "1rem" }}>
         {props.journalEntries.map((journalEntry) => (
           <div key={journalEntry.id} className="col-sm-4">

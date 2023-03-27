@@ -2,7 +2,7 @@ import { MoodChart } from "./Chart";
 export function MoodsIndex(props) {
   return (
     <div>
-      <MoodChart />;<h1>Mood Tracking</h1>
+      <MoodChart />;<h1>Feelings Tracking</h1>
       <div className="row">
         {props.moods.map((mood) => (
           <div key={mood.id} className="col-sm-4">
