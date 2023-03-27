@@ -6,7 +6,7 @@ export function MoodsIndex(props) {
       <div className="row">
         {props.moods.map((mood) => (
           <div key={mood.id} className="col-sm-4">
-            <div className="card">
+            <div className="card" style={{ background: "lightgrey", fontWeight: "bolder" }}>
               <div className="card-body">
                 <h5 className="card-title">{mood.mood_type}</h5>
                 <p className="card-text"> {mood.mood_intensity}</p>

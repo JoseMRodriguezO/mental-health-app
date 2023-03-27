@@ -16,11 +16,13 @@ export function JournalEntriesShow(props) {
         <div>
           <input defaultValue={props.journalEntry.content} name="content" className="form-control" type="text"></input>
         </div>
-        <button className="" type="submit">
+        <button className="btn btn-primary" type="submit">
           Edit
         </button>
       </form>
-      <button onClick={handleClick}>Delete</button>
+      <button className="btn btn-primary" onClick={handleClick}>
+        Delete
+      </button>
     </div>
   );
 }
