@@ -17,6 +17,12 @@ export function MoodsNew(props) {
             <option value="sad">Sad</option>
             <option value="angry">Angry</option>
             <option value="anxious">Anxious</option>
+            <option value="anxious">Frustrated</option>
+            <option value="anxious">Excited</option>
+            <option value="anxious">Depressed</option>
+            <option value="anxious">Lonely</option>
+            <option value="anxious">Overwhelmed</option>
+            <option value="anxious">Relaxed</option>
           </select>
         </div>
         <div>

@@ -7,7 +7,7 @@ export function JournalEntriesIndex(props) {
           <div key={journalEntry.id} className="col-sm-4">
             <div className="card" style={{ background: "lightgrey", fontWeight: "bolder", width: "250px" }}>
               <div className="card-body">
-                <h5 className="card-title" style={{ fontSize: "100px" }}>
+                <h5 className="card-title" style={{ fontSize: "2rem" }}>
                   {journalEntry.title}
                 </h5>
 

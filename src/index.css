@@ -13,3 +13,12 @@ font-size:  2em !important;
 
 ;
 }
+.calendar-container {
+  background-color: #45414156;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.calendar {
+  background-color: lightgrey;
+}

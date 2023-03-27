@@ -33,11 +33,11 @@ export function Home() {
 
   return (
     <div className="container">
-      <header>
-        <h1>TalkSafe</h1>
+      <header className="py-3">
+        <h1 className="text-center display-2 fw-bold">TalkSafe</h1>
       </header>
       <main>
-        <p>
+        <p className="lead">
           Introducing TalkSafe - the app that helps you share your emotions in a safe and supportive environment. With
           TalkSafe, you can connect with others who are going through similar experiences and share your thoughts and
           feelings without fear of judgement. Whether you're struggling with anxiety, depression, or just need someone
@@ -48,19 +48,22 @@ export function Home() {
           start sharing your emotions in a safe and supportive environment. Together, we can help each other heal and
           overcome life's challenges.s{" "}
         </p>
-        <div>
-          <h2>Positive Quote of the Day:</h2>
-          <p>{quote}</p>
+        <div className="card">
+          <div className="card-body">
+            <div className="quote-container" style={{ background: "lightgrey", padding: "20px" }}>
+              <h2 className="mb-3 display-6">Positive Quote of the Day:</h2>{" "}
+            </div>
+            <p className="quote-text" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+              {quote}
+            </p>
+          </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Signup Now!!
-        </button>
       </main>
       <div>
-        <h1>Activities and Resources</h1>
-        <ul>
+        <h1 className="text-center my-5 display-3">Activities and Resources</h1>
+        <ul className="list-group">
           {activities.map((activity) => (
-            <li key={activity.id}>
+            <li key={activity.id} className="list-group-item" style={{ background: "lightgrey", padding: "20px" }}>
               <h2>{activity.title}</h2>
               <p>{activity.description}</p>
             </li>

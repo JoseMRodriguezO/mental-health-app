@@ -23,7 +23,9 @@ export function TaskManager() {
       <h1>Help plan</h1>
       <div className="row">
         <div className="col-md-6">
-          <Calendar onChange={handleDateChange} value={selectedDate} />
+          <div className="calendar-container">
+            <Calendar className="calendar" onChange={handleDateChange} value={selectedDate} locale="en-US" />
+          </div>
         </div>
         <div className="col-md-6">
           <h2>Plan for {selectedDate.toDateString()}</h2>
