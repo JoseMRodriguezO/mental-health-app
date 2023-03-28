@@ -16,34 +16,53 @@ ChartJS.register(LineElement, LineController, PointElement, CategoryScale, Linea
 export function MoodChart(props) {
   console.log("MoodChart", props.moods);
   const moodTypes = ["Happy", "Angry", "Sad", "Depressed", "Anxious"];
-  const moodCounts = [0, 0, 0, 0, 0];
+  const moodCounts = {};
+  moodTypes.forEach((moodType) => {
+    moodCounts[moodType] = 0;
+  });
+
   props.moods.forEach((mood) => {
-    if (mood.mood_type === "Happy") {
-      moodCounts[0] += 1;
-    }
-    if (mood.mood_type === "Angry") {
-      moodCounts[1] += 1;
-    }
-    if (mood.mood_type === "Sad") {
-      moodCounts[2] += 1;
-    }
-    if (mood.mood_type === "Anxious") {
-      moodCounts[3] += 1;
-    }
-    if (mood.mood_type === "Depressed") {
-      moodCounts[4] += 1;
+    if (mood.mood_type in moodCounts) {
+      moodCounts[mood.mood_type] += 1;
     }
   });
+
+  // const moodCounts = [0, 0, 0, 0, 0];
+  // props.moods.forEach((mood) => {
+  //   if (mood.mood_type === "Happy") {
+  //     moodCounts[0] += 1;
+  //   }
+  //   if (mood.mood_type === "Angry") {
+  //     moodCounts[1] += 1;
+  //   }
+  //   if (mood.mood_type === "Sad") {
+  //     moodCounts[2] += 1;
+  //   }
+  //   if (mood.mood_type === "Anxious") {
+  //     moodCounts[3] += 1;
+  //   }
+  //   if (mood.mood_type === "Depressed") {
+  //     moodCounts[4] += 1;
+  //   }
+  // });
   const chartData = {
     labels: moodTypes,
     datasets: [
       {
-        label: "Mood Intensity",
+        label: "Mood Types",
 
         backgroundColor: "blue",
         borderColor: "black",
         borderWidth: 2,
-        data: moodCounts,
+        data: [moodCounts],
+      },
+      {
+        label: "Mood Intensity",
+
+        backgroundColor: "black",
+        borderColor: "black",
+        borderWidth: 2,
+        data: [5, 5, 5, 1, 4],
       },
     ],
   };

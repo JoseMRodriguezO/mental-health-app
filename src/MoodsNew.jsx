@@ -4,6 +4,7 @@ export function MoodsNew(props) {
     event.preventDefault();
     const params = new FormData(event.target);
     props.onCreateMood(params, () => event.target.reset());
+    window.location.href = "/moods";
   };
 
   return (
@@ -17,12 +18,12 @@ export function MoodsNew(props) {
             <option value="sad">Sad</option>
             <option value="angry">Angry</option>
             <option value="anxious">Anxious</option>
-            <option value="anxious">Frustrated</option>
-            <option value="anxious">Excited</option>
-            <option value="anxious">Depressed</option>
-            <option value="anxious">Lonely</option>
-            <option value="anxious">Overwhelmed</option>
-            <option value="anxious">Relaxed</option>
+            <option value="frustrate">Frustrated</option>
+            <option value="excited">Excited</option>
+            <option value="Depressed">Depressed</option>
+            <option value="Lonely">Lonely</option>
+            <option value="Overwhelmed">Overwhelmed</option>
+            <option value="relaxed">Relaxed</option>
           </select>
         </div>
         <div>
