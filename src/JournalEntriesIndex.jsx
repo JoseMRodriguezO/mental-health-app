@@ -1,5 +1,3 @@
-import React from "react";
-import { Chat } from "./Chat";
 export function JournalEntriesIndex(props) {
   return (
     <div>
@@ -21,7 +19,6 @@ export function JournalEntriesIndex(props) {
             </div>
           </div>
         ))}
-        <Chat />
       </div>
     </div>
   );

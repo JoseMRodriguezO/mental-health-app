@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import { MoodsIndex } from "./MoodsIndex";
 import { Home } from "./Home";
 import "react-calendar/dist/Calendar.css";
+import { Chat } from "./Chat";
 
 export function Content() {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -104,6 +105,7 @@ export function Content() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Chat" element={<Chat />} />
       </Routes>
 
       <Modal show={isJournalEntriesShowVisible} onClose={handleClose}>

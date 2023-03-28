@@ -30,7 +30,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/journal_entries">
-                  Posts
+                  Dashboard
                 </Link>
               </li>
               <li className="nav-item">
@@ -46,6 +46,11 @@ export function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="/moods">
                   Feelings Tracking
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/chat">
+                  Chat
                 </Link>
               </li>
 
@@ -68,20 +73,6 @@ export function Header() {
                 {localStorage.jwt !== undefined ? <LogoutLink className="nav-link" /> : null}
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="text"
-                placeholder="Search"
-                aria-label="Search"
-                value={searchFilter}
-                onChange={(event) => setSearchFilter(event.target.value)}
-              />
-
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
