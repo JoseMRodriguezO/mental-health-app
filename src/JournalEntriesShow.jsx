@@ -1,6 +1,7 @@
 export function JournalEntriesShow(props) {
   const ishandleClick = () => {
-    window.location.href = "https://www.betterhelp.com";
+    window.location.href =
+      "https://miramontbh.com/ppc-mh-treatment/?st-t=ppc&gclid=CjwKCAjwoIqhBhAGEiwArXT7KyxbnhCkkOOPnI59lrn7e9YH-BhUd9APxVdcB_uCXRKTIzAD23D6UBoCkIAQAvD_BwE";
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,7 +18,7 @@ export function JournalEntriesShow(props) {
       <p>{props.journalEntry.content}</p>
       <form onSubmit={handleSubmit}>
         <div className="card">
-          <input defaultValue={props.journalEntry.content} name="content" className="form-control" type="text"></input>
+          <input defaultValue={props.journalEntry.content} className="form-control" type="text"></input>
         </div>
         <button className="btn btn-primary" type="submit">
           Edit
@@ -28,7 +29,7 @@ export function JournalEntriesShow(props) {
       </button>
       <div>
         <button className="btn btn-primary" onClick={ishandleClick}>
-          Visit BetterHelp
+          More Help Here
         </button>
       </div>
     </div>

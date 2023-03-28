@@ -14,32 +14,35 @@ export function Chat() {
   };
 
   return (
-    <div className="chat-box">
-      <div className="container">
-        {users.map((user, index) => (
-          <div
-            key={index}
-            className={`talk-bubble border round tri-right ${index % 2 === 0 ? "left-top" : "btm-left-in"}`}
-          >
-            <div className="talktext"></div>
-            {messages.map(
-              (message, index) =>
-                message.user === user && (
-                  <li key={index} className="message-item">
-                    <strong>{message.user}:</strong> {message.message}
-                  </li>
-                )
-            )}
-          </div>
-        ))}
-      </div>
+    <>
+      <h1>Connect with people</h1>
+      <div className="chat-box">
+        <div className="container">
+          {users.map((user, index) => (
+            <div
+              key={index}
+              className={`talk-bubble border round tri-right ${index % 2 === 0 ? "left-top" : "btm-left-in"}`}
+            >
+              <div className="talktext"></div>
+              {messages.map(
+                (message, index) =>
+                  message.user === user && (
+                    <li key={index} className="message-item">
+                      <strong>{message.user}:</strong> {message.message}
+                    </li>
+                  )
+              )}
+            </div>
+          ))}
+        </div>
 
-      <form onSubmit={sendMessage} className="message-form">
-        <input type="text" name="message" className="message-input" />
-        <button type="submit" className="send-button btn btn-primary">
-          Send
-        </button>
-      </form>
-    </div>
+        <form onSubmit={sendMessage} className="message-form">
+          <input type="text" name="message" className="message-input" />
+          <button type="submit" className="send-button btn btn-primary">
+            Send
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
