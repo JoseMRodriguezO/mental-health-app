@@ -73,6 +73,7 @@ export function Home() {
         </div>
       </main>
       <div>
+        <img src="https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_960_720.jpg" />
         <h1 className="text-center my-5 display-3">Activities </h1>
         <ul className="list-group">
           {activities.map((activity) => (

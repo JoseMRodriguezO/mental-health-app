@@ -27,24 +27,6 @@ export function MoodChart(props) {
     }
   });
 
-  // const moodCounts = [0, 0, 0, 0, 0];
-  // props.moods.forEach((mood) => {
-  //   if (mood.mood_type === "Happy") {
-  //     moodCounts[0] += 1;
-  //   }
-  //   if (mood.mood_type === "Angry") {
-  //     moodCounts[1] += 1;
-  //   }
-  //   if (mood.mood_type === "Sad") {
-  //     moodCounts[2] += 1;
-  //   }
-  //   if (mood.mood_type === "Anxious") {
-  //     moodCounts[3] += 1;
-  //   }
-  //   if (mood.mood_type === "Depressed") {
-  //     moodCounts[4] += 1;
-  //   }
-  // });
   const chartData = {
     labels: moodTypes,
     datasets: [
