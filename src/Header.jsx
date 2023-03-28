@@ -52,7 +52,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/chat">
-                  Safe one
+                  Safe Zone
                 </Link>
               </li>
 

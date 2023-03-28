@@ -8,7 +8,7 @@ export function JournalEntriesNew(props) {
   };
 
   return (
-    <div>
+    <div className="row">
       <h1>New Post Entry </h1>
       <form onSubmit={handleSubmit}>
         <div>
