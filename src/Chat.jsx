@@ -36,7 +36,7 @@ export function Chat() {
 
       <form onSubmit={sendMessage} className="message-form">
         <input type="text" name="message" className="message-input" />
-        <button type="submit" className="send-button">
+        <button type="submit" className="send-button btn btn-primary">
           Send
         </button>
       </form>

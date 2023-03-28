@@ -7,6 +7,8 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
+  
+  
 }
 
 .modal-main {
@@ -21,7 +23,7 @@
 }
 
 .modal-main button.close {
-  font-size: 2em;
+  font-size: 1px;
   background: none;
   border: none;
   position: absolute;

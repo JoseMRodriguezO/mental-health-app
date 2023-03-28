@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
 import { useState } from "react";
-
 export function Header() {
   const [searchFilter, setSearchFilter] = useState("");
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="navbar-brand">
+      <nav className="navbar navbar-expand-custom navbar-mainbg">
+        <div className="navbar-brand navbar-logo">
           TalkSafe
           <button
             className="navbar-toggler"
-            n
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -19,16 +17,20 @@ export function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="fas fa-bars text-white"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ">
+              <div class="hori-selector">
+                <div class="left"></div>
+                <div class="right"></div>
+              </div>
               <li className="nav-item">
                 <Link className="nav-link" to="/Home">
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
+              <li>
                 <Link className="nav-link" to="/journal_entries">
                   Dashboard
                 </Link>
@@ -50,7 +52,7 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/chat">
-                  Chat
+                  Safe one
                 </Link>
               </li>
 

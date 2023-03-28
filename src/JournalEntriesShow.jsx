@@ -16,8 +16,14 @@ export function JournalEntriesShow(props) {
     <div>
       <p>{props.journalEntry.content}</p>
       <form onSubmit={handleSubmit}>
-        <div>
-          <input defaultValue={props.journalEntry.content} name="content" className="form-control" type="text"></input>
+        <div className="card">
+          <input
+            defaultValue={props.journalEntry.content}
+            name="content"
+            className="form-control"
+            type="text"
+            style={{ fontSize: "14px" }}
+          ></input>
         </div>
         <button className="btn btn-primary" type="submit">
           Edit
