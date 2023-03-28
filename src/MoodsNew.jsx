@@ -11,8 +11,8 @@ export function MoodsNew(props) {
       <h1>Mood</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="mood">Mood:</label>
-          <select name="mood">
+          <label htmlFor="mood_type">Mood:</label>
+          <select name="mood_type">
             <option value="happy">Happy</option>
             <option value="sad">Sad</option>
             <option value="angry">Angry</option>
@@ -26,8 +26,8 @@ export function MoodsNew(props) {
           </select>
         </div>
         <div>
-          <label htmlFor="mood">Mood Intensity:</label>
-          <select name="moodIntensity">
+          <label htmlFor="mood_intensity">Mood Intensity:</label>
+          <select name="mood_intensity">
             <option value="low">Low</option>
             <option value="Medium">Medium</option>
             <option value="high">High</option>
