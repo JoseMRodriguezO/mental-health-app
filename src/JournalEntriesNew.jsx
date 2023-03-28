@@ -1,3 +1,5 @@
+import React from "react";
+import ReactPlayer from "react-player";
 export function JournalEntriesNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ export function JournalEntriesNew(props) {
           Create Post Entry
         </button>
       </form>
+      <ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" controls={true} width="480px" height="270px" />
     </div>
   );
 }
