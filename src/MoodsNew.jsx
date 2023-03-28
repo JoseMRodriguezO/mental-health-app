@@ -38,7 +38,7 @@ export function MoodsNew(props) {
           Create Mood
         </button>
       </form>
-      <TaskManager />;
+      <TaskManager />
     </div>
   );
 }
